@@ -13,13 +13,13 @@ public class App extends Application{
 
     @Override
     public void start(Stage primmaryStage) throws Exception {
-             primmaryStage.setTitle("Academia dos Devs");
+             primmaryStage.setTitle("Academic of Devs");
              Button botao = new Button("Click");
              botao.setOnAction(new EventHandler<ActionEvent>() {
 
                 @Override
                 public void handle(ActionEvent arg0) {
-                          System.out.println("Click next");             
+                          System.out.println("Click here");             
                 }
                 
              });
