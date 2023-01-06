@@ -1,9 +1,7 @@
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class App extends Application{
@@ -13,20 +11,12 @@ public class App extends Application{
 
     @Override
     public void start(Stage primmaryStage) throws Exception {
-             primmaryStage.setTitle("Academic of Devs");
-             Button botao = new Button("Click");
-             botao.setOnAction(new EventHandler<ActionEvent>() {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("layout.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene tela = new Scene(root);
 
-                @Override
-                public void handle(ActionEvent arg0) {
-                          System.out.println("Click here");             
-                }
-                
-             });
-
-             StackPane root = new StackPane();
-             root.getChildren().addAll(botao);
-             primmaryStage.setScene(new Scene(root, 300, 250));
-             primmaryStage.show();
+        primmaryStage.setTitle("Academic of Devs");
+        primmaryStage.setScene(tela);
+        primmaryStage.show();
     }
 }
